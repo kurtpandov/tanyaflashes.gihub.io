@@ -1,3 +1,17 @@
+/*Variables*/
+.root{
+--color-sandy: #ecb953;
+}
+/*Common styles*/
+a{
+    color: var(--color-sandy);
+    text-decoration: none;
+    transition: opacity .25s ease;
+}
+a:hover{
+    opacity: .7 ;
+}
+
 /*Header*/
 .header{
     height: 110vh;
@@ -13,18 +27,36 @@
     justify-content: space-evenly;
     height: 80px;
     background: rgb(253, 253, 253);
+
+}
+
+.header-top a.active{
+    color: var(--color-sandy);
+}
+
+.menu-element__link{
+    color: #000000;
 }
 .logo{
-    font-size: 36px;
-    margin-right: 10vh;
-    margin-left: 5vh;
+    font-size: 26px;
+    margin-right: 2vh;
+    margin-left: 1vh;
+    color: #000000;
 
 }
 .switcher{
-    margin-left: 10vh;
-    margin-right: 5vh;
+    margin-left: 2vh;
+    margin-right: 1vh;
 }
 .menu{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+}
+.menu-element{
+    margin-right: 1vh;
+}
+.menu-element:last-child {
+    margin-right: 0;
+
 }
