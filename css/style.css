@@ -1,10 +1,10 @@
 /*Variables*/
 .root{
---color-sandy: #ecb953;
+--color-sandy: #bda753;
 }
 /*Common styles*/
 a{
-    color: #ecb953;
+    color: #bda753;
     text-decoration: none;
     transition: opacity .25s ease;
 }
@@ -14,8 +14,9 @@ a:hover{
 
 /*Header*/
 .header{
+
     height: 110vh;
-    background: url(../images/IMG_0734.JPG) no-repeat center;
+    background: url(../Images/IMG_0734.JPG) no-repeat center;
     background-size: cover;
     /*clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 98% 100%, 84% 100%, 15% 100%, 4% 100%, 0% 85%);*/
 }
@@ -26,12 +27,16 @@ a:hover{
     align-items: center;
     justify-content: space-evenly;
     height: 80px;
-    background: rgb(253, 253, 253);
+    width: 100%;
+    background: rgb(253, 253, 253,96%);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 
 }
 
 .header-top a.active{
-    color: #ecb953;
+    color: #bda753;
 }
 
 .menu-element__link{
