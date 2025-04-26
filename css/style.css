@@ -70,6 +70,82 @@ a.link:hover{
 .menu-element a.link.active, .menu-element a.link:hover{
     color: #bda753;
 }
-.about-me{
-    font-family: "Courier", monospace;
+
+/*about-me*/
+.about-me {
+    display: flex; /* Используем flexbox для расположения элементов */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку при нехватке места */
+    padding: 20px; /* Отступы внутри секции */
+    background-color: #f9f9f9; /* Цвет фона секции */
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для секции */
+    font-family: "Courier", monospace
+}
+
+/* Стили для левой части */
+.left {
+    flex: 1; /* Занимает 1 часть от доступного пространства */
+    display: flex;
+    justify-content: center; /* Выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    min-width: 200px; /* Минимальная ширина для левой части */
+}
+
+/* Стили для изображения */
+.about-me__images {
+    max-width: 100%; /* Ограничиваем ширину изображения */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+
+}
+
+/* Стили для правой части */
+.right {
+    flex: 2; /* Занимает 2 части от доступного пространства */
+    padding-left: 20px; /* Отступ слева для правой части */
+}
+
+/* Стили для заголовка */
+.about-me__title {
+    font-size: 24px; /* Размер шрифта заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* Стили для описания */
+.about-me__description {
+    font-size: 16px; /* Размер шрифта описания */
+    line-height: 1.5; /* Междустрочный интервал */
+    margin-bottom: 10px; /* Отступ снизу для абзацев */
+}
+
+/* Серый цвет для описания с классом gray */
+.gray {
+    color: gray; /* Цвет текста серый */
+}
+
+/* Стили для списка дополнительных данных */
+.about-me__extra {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы у списка */
+}
+
+.about-me__extra-elements {
+    margin-bottom: 5px; /* Отступ между элементами списка */
+}
+
+/* Стили для выделенного текста (bold) */
+.bold {
+    font-weight: bold; /* Жирный шрифт */
+}
+
+/* Медиа-запрос для адаптивности на мобильных устройствах */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column; /* Вертикальное расположение на маленьких экранах */
+        align-items: center; /* Центрирование содержимого по горизонтали */
+    }
+
+    .right {
+        padding-left: 0; /* Убираем отступ слева на мобильных устройствах */
+        text-align: center; /* Центрируем текст в правой части */
+    }
 }
