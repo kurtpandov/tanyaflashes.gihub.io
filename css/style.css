@@ -193,6 +193,12 @@ a.link:hover{
 .portfolio-item h3 {
     margin-top: 10px;
 }
+.portfolio-item a {
+    color: #bda753;
+    font-family: "Courier New", monospace;
+    white-space: nowrap;
+
+}
 
 /* Стили для мобильных устройств */
 @media (max-width: 768px) {
@@ -208,6 +214,7 @@ a.link:hover{
         min-width: 250px; /* Минимальная ширина для карточек на мобильных устройствах */
     }
 }
+
 footer {
     background-color: #fdfdfd; /* Темный фон */
     color: #333; /* Белый текст */
@@ -225,8 +232,8 @@ footer {
 .social-element {
     display: inline-block; /* Выравнивание в одну строку */
     margin: 0 15px; /* Отступы между элементами */
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
 }
 
 .social-element__linl {
@@ -254,4 +261,30 @@ footer {
     .footer-about {
         font-size: 12px; /* Уменьшаем размер шрифта для мобильных устройств */
     }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 2000px; /* Для демонстрации прокрутки */
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px; /* Отступ от нижней границы */
+    right: 20px; /* Отступ от правой границы */
+    background-color: #bda753; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 50%; /* Скругление углов */
+    padding: 10px 15px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    height: 50px;
+    width: 50px;
+}
+
+.floating-button:hover {
+    background-color: #4e4323; /* Цвет фона при наведении */
 }
