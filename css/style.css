@@ -79,7 +79,7 @@ a.link:hover{
     /*background-color: #f9f9f9; /* Цвет фона секции */
     border-radius: 8px; /* Скругление углов */
     /*  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); Тень для секции */
-    font-family: "Courier New", monospace
+    font-family: "Courier New", monospace;
 }
 
 /* Стили для левой части */
@@ -119,8 +119,14 @@ a.link:hover{
     font-size: 16px;
     line-height: 1.2;
     margin-bottom: 10px;
-}
 
+}
+.about-me__description2 {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+
+}
 
 .gray {
     color: #4b7aac;
@@ -152,6 +158,12 @@ a.link:hover{
         padding-left: 0;
         text-align: left;
     }
+}
+.works{
+    font-family: "Courier New", monospace;
+}
+.work-cases{
+    text-align: center;
 }
 .portfolio {
     padding: 20px;
@@ -187,12 +199,59 @@ a.link:hover{
     .portfolio-container {
         flex-direction: row; /* Горизонтальное направление для мобильных устройств */
         overflow-x: auto; /* Позволяет прокручивать контейнер по горизонтали */
-        width: 300px; /* Фиксированная ширина для карточек */
+        width: 100%; /* Фиксированная ширина для карточек */
         scroll-snap-type: x mandatory; /* Добавляет эффект "прилипания" при прокрутке */
         scroll-snap-align: start; /* Элемент "прилипает" к началу контейнера при прокрутке */
     }
 
     .portfolio-item {
         min-width: 250px; /* Минимальная ширина для карточек на мобильных устройствах */
+    }
+}
+footer {
+    background-color: #fdfdfd; /* Темный фон */
+    color: #333; /* Белый текст */
+    padding: 20px; /* Отступы вокруг содержимого */
+    text-align: center; /* Центрируем текст */
+    width: 100%;
+}
+
+.socials {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0 0 10px 0; /* Убираем внешние отступы, оставляем отступ снизу */
+}
+
+.social-element {
+    display: inline-block; /* Выравнивание в одну строку */
+    margin: 0 15px; /* Отступы между элементами */
+    height: 40px;
+    width: 40px;
+}
+
+.social-element__linl {
+    color: white; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold; /* Жирный шрифт */
+    transition: color 0.3s; /* Плавный переход цвета при наведении */
+}
+
+.social-element__linl:hover {
+    color: #bda753; /* Цвет при наведении */
+}
+
+.footer-about {
+    margin-top: 10px; /* Отступ сверху для текста о владельце */
+    font-size: 14px; /* Размер шрифта */
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+    .social-element {
+        margin: 0 10px; /* Уменьшаем отступы на мобильных устройствах */
+    }
+
+    .footer-about {
+        font-size: 12px; /* Уменьшаем размер шрифта для мобильных устройств */
     }
 }
