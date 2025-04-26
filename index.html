@@ -9,22 +9,36 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header class="header">
-    <div class="header-top">
-        <a href=""  class="logo">@tanyaflashes</a>
+    <header class="header" id="home">
+        <div class="header-top">
+            <a href="#home" class="link logo block-center">@tanyaflashes</a>
 
-        <nav class="navigation">
-            <ul class = menu>
-                <li class="menu-element"><a href="" class="menu-element__link active">About</a></li>
-                <li class="menu-element"><a href="" class="menu-element__link">Work</a></li>
-                <li class="menu-element"><a href="" class="menu-element__link">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+            <nav class="navigation">
+                <ul class="menu block-center">
+                    <li class="menu-element block-center">
+                        <a class="link menu-element__link active home block-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                                <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-element block-center">
+                        <a class="link menu-element__link" href="#about-me">About</a>
+                    </li>
+                    <li class="menu-element block-center">
+                        <a class="link menu-element__link" href="#work">Work</a>
+                    </li>
+                    <li class="menu-element block-center">
+                        <a class="link menu-element__link" href="#contact-me">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
     </header>
 
-    <section class="about-me">
+    <section class="about-me" id="about-me">
     <div class="left">
         <img src="" alt="Мое фото">
     </div>
@@ -93,7 +107,7 @@
         </div>
     </section>
 
-    <section class="contact-me">
+    <section class="contact-me" id="contact-me">
         <h2 class="second-title">Связаться со мной</h2>
         <form action="" class="contact-me__form">
         <div class="input-wrapper">
@@ -114,10 +128,10 @@
 
     <footer>
         <ul class="socials">
-            <li class="social-element"><a target="_blank" href="https://t.me/tanyaflashes" class="social-element__linl">TG</a></li>
-            <li class="social-element"><a target="_blank" href="https://www.instagram.com/tanyaflashes?igsh=bmhhMWU1eDA4NnYx" class="social-element__linl">Inst</a></li>
+            <li class="link social-element"><a target="_blank" href="https://t.me/tanyaflashes" class="social-element__linl">TG</a></li>
+            <li class="link social-element"><a target="_blank" href="https://www.instagram.com/tanyaflashes?igsh=bmhhMWU1eDA4NnYx" class="social-element__linl">Inst</a></li>
         </ul>
-     <p class="footer-about">
+        <p class="footer-about">
         &copy;&nbsp;Зайцева&nbsp;Татьяна&nbsp;2000-2025
      </p>
     </footer>

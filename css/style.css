@@ -3,12 +3,12 @@
 --color-sandy: #bda753;
 }
 /*Common styles*/
-a{
-    color: #bda753;
+a.link{
+
     text-decoration: none;
     transition: opacity .25s ease;
 }
-a:hover{
+a.link:hover{
     opacity: .7 ;
 }
 
@@ -35,15 +35,20 @@ a:hover{
 
 }
 
-.header-top a.active{
-    color: #bda753;
-}
 
 .menu-element__link{
     color: #000000;
+    font-family: "Courier", monospace;
+    white-space: nowrap;
 }
 .logo{
     font-size: 26px;
+    font-family: "Courier", monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.5em;
+
+
     margin-right: 2vh;
     margin-left: 1vh;
     color: #000000;
@@ -61,4 +66,10 @@ a:hover{
 .menu-element:last-child {
     margin-right: 0;
 
+}
+.menu-element a.link.active, .menu-element a.link:hover{
+    color: #bda753;
+}
+.about-me{
+    font-family: "Courier", monospace;
 }
