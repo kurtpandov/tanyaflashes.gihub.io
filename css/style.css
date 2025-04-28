@@ -42,7 +42,7 @@ a.link:hover{
     white-space: nowrap;
 }
 .logo{
-    font-size: 20px;
+    font-size: 26px;
     font-family: "Courier New", monospace;
     white-space: nowrap;
     overflow: hidden;
@@ -154,6 +154,9 @@ a.link:hover{
         align-items: center;
     }
 
+    .logo {
+        font-size: 15px;
+    }
     .right {
         padding-left: 0;
         text-align: left;
