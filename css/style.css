@@ -42,7 +42,7 @@ a.link:hover{
     white-space: nowrap;
 }
 .logo{
-    font-size: 26px;
+    font-size: 20px;
     font-family: "Courier New", monospace;
     white-space: nowrap;
     overflow: hidden;
@@ -216,7 +216,7 @@ a.link:hover{
 }
 
 footer {
-    background-color: #fdfdfd; /* Темный фон */
+    background-color: #ffffff; /* Темный фон */
     color: #333; /* Белый текст */
     padding: 20px; /* Отступы вокруг содержимого */
     text-align: center; /* Центрируем текст */
@@ -290,6 +290,8 @@ body {
 }
 .modal {
     display: none; /* Скрыто по умолчанию */
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1000; /* Поверх других элементов */
     left: 0;
@@ -302,20 +304,102 @@ body {
 .modal-content {
     background-color: white;
     color: #000000;
-    margin: 15% auto; /* Центрирование окна */
+    margin: 20% auto; /* Центрирование окна */
     padding: 20px;
     border-radius: 5px;
     width: 80%; /* Ширина окна */
     max-width: 500px; /* Максимальная ширина окна */
+    text-align: center;
 }
 
-.close {
-    color: #000000;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.modal-content__img img {
+    width: 100px; /* Установите желаемую ширину изображения */
+    height: 100px; /* Установите желаемую высоту изображения */
+    border-radius: 50%; /* Делаем изображение круглым */
+    object-fit: cover; /* Обрезаем изображение по кругу */
+    margin-left: 40%;
+
+}
+.modal-content h2{
+    line-height: 0.9;
+}
+.modal-content p{
+    padding-bottom: 20px;
 }
 
+.modal-floating-button {
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    background-color: #d1d1d1; /* Цвет фона кнопки */
+    color: #000000; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Скругляем углы кнопки */
+    padding: 10px 50%; /* Отступы внутри кнопки */
+    cursor: pointer; /* Курсор при наведении */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    width: 100%;
+
+}
+
+.modal-floating-button span {
+    margin-left: 10px; /* Отступ слева от текста */
+}
+
+
+
+.socials {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+}
+
+/* Стили для элемента списка */
+.link {
+    margin: 0 10px; /* Отступы между кнопками */
+}
+
+/* Стили для кнопки */
+.modal-floating-button {
+    display: flex; /* Используем flexbox для выравнивания содержимого */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    background-color: #a3b8d1; /* Цвет фона кнопки */
+    color: #000000; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Скругляем углы кнопки */
+    padding: 10px 35%; /* Отступы внутри кнопки */
+    cursor: pointer; /* Курсор при наведении */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    margin-top: 5px;
+}
+
+/* Стили для изображения внутри кнопки */
+.modal-floating-button img {
+    width: 20px; /* Ширина изображения внутри кнопки */
+    height: 20px; /* Высота изображения внутри кнопки */
+    margin-right: 10px; /* Отступ справа от изображения */
+}
+
+/* Стили для текста внутри кнопки */
+.modal-floating-button span {
+    margin-left: 10px; /* Отступ слева от текста (если нужно) */
+}
+.modal-social-element__link{
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 50% auto; /* Уменьшаем отступы на мобильных устройствах */
+    }
+    .modal-content__img img {
+        margin-left: 33%;
+    }
+    .modal-floating-button {
+        padding: 10px 25%;
+    }
+}
 .close:hover,
 .close:focus {
     color: black; /* Цвет при наведении */
