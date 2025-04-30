@@ -50,6 +50,107 @@ a.link:hover{
     border-radius: 20px;
     
 }
+
+
+.menu-button {
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+    pointer-events: all;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+    flex-basis: content;
+    align-items: center;
+    margin-right: -12px;
+    margin-left: 8px;
+    padding-left: 100px;
+}
+
+.menu-button .menu-button-icon {
+    position: relative;
+    width: 30px;
+    height: 15px;
+    margin-top: 14px;
+}
+
+.menu-button .menu-button-icon::before {
+    transition: color 0.3s;
+    color: red;
+}
+
+.menu-button .menu-button-icon span,
+.menu-button .menu-button-icon span::before,
+.menu-button .menu-button-icon span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    background: #000000;
+}
+
+.menu-button .menu-button-icon span {
+    right: 0;
+    left: 0;
+    transition: background 0.3s;
+}
+
+.menu-button .menu-button-icon span::before,
+.menu-button .menu-button-icon span::after {
+    left: 0;
+    width: 100%;
+}
+
+.menu-button .menu-button-icon span::before {
+    top: -7px;
+    transition: background 0.3s, transform 0.3s, top 0.3s 0.3s;
+}
+
+.menu-button .menu-button-icon span::after {
+    bottom: -7px;
+    transition: background 0.3s, transform 0.3s, bottom 0.3s 0.3s;
+}
+
+.menu-button .menu-button-label {
+    margin-right: 12px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+}
+
+.menu-button.active .menu-button-icon::before {
+    color: red;
+}
+
+.menu-button.active .menu-button-icon span,
+.menu-button.active .menu-button-icon span::before,
+.menu-button.active .menu-button-icon span::after {
+    background: #000000;
+}
+
+.menu-button.active .menu-button-icon span {
+    background: 0 0;
+}
+
+.menu-button.active .menu-button-icon span::before {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 0.3s, transform 0.3s 0.3s;
+}
+
+.menu-button.active .menu-button-icon span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition: bottom 0.3s, transform 0.3s 0.3s;
+}
+
+.menu-button.active .menu-button-label {
+    display: none;
+}
+
+
+
 .hamburger {
     cursor: pointer;
     display: none;
@@ -77,6 +178,16 @@ a.link:hover{
 .hamburger.active .line3 {
     transform: translateY(-10px) rotate(-45deg);
 }
+
+
+
+
+
+
+
+
+
+
 .portfolio-modal.show {
     opacity: 1; /* Полная непрозрачность при показе */
     visibility: visible; /* Делаем элемент видимым */
@@ -265,10 +376,10 @@ a.link:hover{
         border-radius: 0;
 
     }
-    .hamburger {
-
+    .menu-button{
         display: flex;
     }
+
 }
 .works{
     font-family: "Courier New", monospace;

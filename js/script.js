@@ -14,7 +14,7 @@ window.addEventListener('click', function(event) {
         modal.style.display = "none";
     }
 });
-document.querySelector('.menu-elementPortfolio').addEventListener('click', function() {
+document.querySelector('.js-menu-button').addEventListener('click', function() {
     if (portfoliomodal.style.display === "block"){
         portfoliomodal.style.display = "none";
     }
@@ -95,3 +95,11 @@ const hamburger = document.getElementById('hamburger');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
+
+const button = document.getElementById('menu-button');
+
+button.addEventListener('click', () => {
+    button.classList.toggle('active');
+});
+
+
