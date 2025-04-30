@@ -18,7 +18,6 @@ a.link:hover{
     height: 110vh;
     background: url(../Images/Logo.JPG) no-repeat center;
     background-size: cover;
-    /*clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 98% 100%, 84% 100%, 15% 100%, 4% 100%, 0% 85%);*/
 }
 
 .header-top{
@@ -31,10 +30,96 @@ a.link:hover{
     background: rgb(253, 253, 253,96%);
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 1001;
 
 }
 
+.portfolio-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000; /* Поверх других элементов */
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 45%;
+    margin-left: 60%;
+    margin-top: 3%;
+    background-color: rgb(255, 255, 255, 90%); /* Полупрозрачный фон */
+    border-radius: 20px;
+    
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 30px;
+}
+
+.line {
+    background-color: #000000;
+    height: 2px;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .line1 {
+    transform: translateY(18px) rotate(45deg);
+}
+
+.hamburger.active .line2 {
+    opacity: 0;
+}
+
+.hamburger.active .line3 {
+    transform: translateY(-10px) rotate(-45deg);
+}
+.portfolio-modal.show {
+    opacity: 1; /* Полная непрозрачность при показе */
+    visibility: visible; /* Делаем элемент видимым */
+}
+.portfolio-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.portfolio-item {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.portfolio-item a:hover {
+    color: #4e4323;; /* Цвет при наведении */
+}
+
+.sub-list {
+    list-style: none;
+    padding-left: 20px; /* Отступ для подсписка */
+    display: none; /* Скрываем подсписок по умолчанию */
+}
+
+.portfolio-item:hover .sub-list {
+    display: block; /* Показываем подсписок при наведении */
+}
+
+.sub-item {
+    margin: 5px 0;
+}
+
+.sub-item a {
+    color: #555;
+}
 
 .menu-element__link{
     color: #000000;
@@ -73,16 +158,14 @@ a.link:hover{
 
 /*about-me*/
 .about-me {
-    display: flex; /* Используем flexbox для расположения элементов */
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку при нехватке места */
-    padding: 20px; /* Отступы внутри секции */
-    /*background-color: #f9f9f9; /* Цвет фона секции */
-    border-radius: 8px; /* Скругление углов */
-    /*  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); Тень для секции */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 8px;
     font-family: "Courier New", monospace;
 }
 
-/* Стили для левой части */
+
 .left {
     flex: 1;
     display: flex;
@@ -149,17 +232,42 @@ a.link:hover{
 
 /* Медиа-запрос для адаптивности на мобильных устройствах */
 @media (max-width: 768px) {
+    .header-top {
+        justify-content:left;
+    }
+
     .about-me {
         flex-direction: column;
         align-items: center;
     }
 
     .logo {
-        font-size: 15px;
+        font-size: 24px;
     }
     .right {
         padding-left: 0;
         text-align: left;
+    }
+    .navigation{
+        margin-left: 100px;
+    }
+    .menu-element{
+        display: none;
+    }
+    .menu-elementPortfolio{
+        display: block;
+    }
+    .portfolio-modal {
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        border-radius: 0;
+
+    }
+    .hamburger {
+
+        display: flex;
     }
 }
 .works{
@@ -180,7 +288,7 @@ a.link:hover{
 
 .portfolio-item {
     background: white;
-    border: 1px solid #ddd;
+
     border-radius: 5px;
     margin: 10px;
     padding: 15px;
@@ -239,14 +347,14 @@ footer {
     width: 30px;
 }
 
-.social-element__linl {
+.social-element__link {
     color: white; /* Цвет ссылок */
     text-decoration: none; /* Убираем подчеркивание */
     font-weight: bold; /* Жирный шрифт */
     transition: color 0.3s; /* Плавный переход цвета при наведении */
 }
 
-.social-element__linl:hover {
+.social-element__link:hover {
     color: #bda753; /* Цвет при наведении */
 }
 
