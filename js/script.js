@@ -2,38 +2,30 @@
 const modal = document.getElementById("modal");
 const portfoliomodal = document.getElementById("portfolio-modal");
 const menuLinks = document.querySelectorAll('.menu-element__link');
+const floatingButton = document.querySelector('.floating-button');
+const menuButton = document.querySelector('.js-menu-button');
+const hamburger = document.getElementById('hamburger');
+const button = document.getElementById('menu-button');
 const offset = 100; // Смещение для фиксированного меню
 
+// Функция для переключения отображения модального окна
+function toggleModal(modalElement, displayStyle) {
+    modalElement.style.display = displayStyle;
+}
 
-document.querySelector('.floating-button').addEventListener('click', function() {
-    modal.style.display = "block";
+// Обработчик для клика по кнопке
+floatingButton.addEventListener('click', () => toggleModal(modal, "block"));
+
+// Закрытие модального окна при клике вне его
+window.addEventListener('click', (event) => {
+    if (event.target === modal) toggleModal(modal, "none");
 });
 
-window.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
+// Переключение отображения портфолио-модального окна
+menuButton.addEventListener('click', () => {
+    const displayStyle = portfoliomodal.style.display === "block" ? "none" : "block";
+    toggleModal(portfoliomodal, displayStyle);
 });
-document.querySelector('.js-menu-button').addEventListener('click', function() {
-    if (portfoliomodal.style.display === "block"){
-        portfoliomodal.style.display = "none";
-    }
-    else {
-        portfoliomodal.style.display = "block";
-    }
-});
-
-
-document.querySelector('.floating-button').addEventListener('click', function() {
-    modal.style.display = "block";
-});
-
-window.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
-
 
 // Функция для проверки, находится ли элемент в области видимости
 function isInViewport(section, scrollPosition) {
@@ -57,32 +49,27 @@ function highlightMenu() {
 
 // Функция для плавной прокрутки к секции
 function smoothScrollToSection(event) {
-    event.preventDefault(); // Отменяем стандартное поведение ссылки
-
+    event.preventDefault();
     const targetSection = document.querySelector(this.getAttribute('href'));
     const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
 
-    // Плавная прокрутка к целевой позиции
     window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
     });
 }
 
-// Добавляем обработчики событий
-menuLinks.forEach(link => {
-    link.addEventListener('click', smoothScrollToSection);
-});
+// Добавляем обработчики событий для ссылок меню
+menuLinks.forEach(link => link.addEventListener('click', smoothScrollToSection));
 
 // Добавляем обработчик события прокрутки
 window.addEventListener('scroll', highlightMenu);
 
-document.addEventListener('DOMContentLoaded', function() {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    portfolioItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const subList = this.querySelector('.sub-list');
+// Обработчик для портфолио-элементов
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const subList = item.querySelector('.sub-list');
             if (subList) {
                 subList.style.display = subList.style.display === 'block' ? 'none' : 'block';
             }
@@ -90,16 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const hamburger = document.getElementById('hamburger');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
+// Переключение классов для кнопок
+[hamburger, button].forEach(el => {
+    el.addEventListener('click', () => el.classList.toggle('active'));
 });
-
-const button = document.getElementById('menu-button');
-
-button.addEventListener('click', () => {
-    button.classList.toggle('active');
-});
-
 

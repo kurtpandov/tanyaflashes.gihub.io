@@ -1,7 +1,4 @@
-/*Variables*/
-.root{
---color-sandy: #bda753;
-}
+
 /*Common styles*/
 a.link{
 
@@ -48,7 +45,7 @@ a.link:hover{
     margin-top: 3%;
     background-color: rgb(255, 255, 255, 90%); /* Полупрозрачный фон */
     border-radius: 20px;
-    
+
 }
 
 
@@ -182,7 +179,34 @@ a.link:hover{
 
 
 
+.dropdown {
+    font-family: "Courier New", monospace;
+    display: none; /* Скрываем выпадающий список по умолчанию */
+    position: absolute; /* Позиционируем его относительно родителя */
+    background-color: white; /* Цвет фона выпадающего списка */
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+    z-index: 1000; /* Устанавливаем порядок отображения */
 
+}
+
+.menu-element:hover .dropdown {
+    display: block; /* Показываем выпадающий список при наведении на родительский элемент */
+}
+
+.dropdown li {
+    padding: 7px; /* Отступы для элементов списка */
+}
+
+.dropdown li a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: black; /* Цвет текста  #bda753 */
+}
+
+.dropdown li a:hover {
+    color: #bda753;
+}
 
 
 
@@ -196,7 +220,7 @@ a.link:hover{
     list-style: none;
     padding: 0;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Courier New", monospace;
 }
 
 .portfolio-item {
@@ -490,7 +514,9 @@ body {
     padding: 0;
     height: 2000px; /* Для демонстрации прокрутки */
 }
-
+body.no-scroll {
+    overflow: hidden;
+}
 .floating-button {
     position: fixed;
     bottom: 20px; /* Отступ от нижней границы */
