@@ -82,3 +82,52 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', () => el.classList.toggle('active'));
 });
 
+
+
+const images = document.querySelectorAll('.photo-grid img');
+const modal23 = document.getElementById('modal23');
+const modalImg = document.getElementById('modalImg');
+const closeBtn = document.getElementById('closeBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0;
+
+function showImage(index) {
+    currentIndex = index;
+    modalImg.src = images[index].src;
+    modal23.style.display = 'flex';
+}
+
+images.forEach((img, index) => {
+    img.addEventListener('click', () => showImage(index));
+});
+
+closeBtn.addEventListener('click', () => {
+    modal23.style.display = 'none';
+});
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+});
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+});
+
+modal23.addEventListener('click', (e) => {
+    if (e.target === modal23) {
+        modal23.style.display = 'none';
+    }
+});
+
+// Навигация с клавиатуры
+document.addEventListener('keydown', (e) => {
+    if (modal23.style.display === 'flex') {
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
+    }
+});
