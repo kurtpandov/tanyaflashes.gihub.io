@@ -10,14 +10,6 @@
 
 
 </head>
-<style>
-    .header{
-
-    height: 110vh;
-    background: url(../Images/Logo.JPG) no-repeat center;
-    background-size: cover;
-}
-</style>
 <body>
 <header class="header" id="home">
     <div class="header-top">
@@ -27,18 +19,18 @@
             <ul class="menu block-center">
 
                 <li class="menu-element block-center">
-                    <a class="link menu-element__link" href="#about-me">About</a>
+                    <a class="link menu-element__link" href="index.html#about-me">About</a>
                 </li>
                 <li class="menu-element block-center">
-                    <a class="link menu-element__link" href="#work">Work</a>
+                    <a class="link menu-element__link" href="index.html#work">Work</a>
                 </li>
                 <li class="menu-element block-center">
-                    <a class="link menu-element__link" href="#contact-me">Contact</a>
+                    <a class="link menu-element__link" href="index.html#contact-me">Contact</a>
                 </li>
                 <li class="menu-element block-center Portfolio">
                     <a class="link menu-element__link" href="#Portfolio">Portfolio</a>
                     <ul class="dropdown">
-                        <li><a href="portraits.html"> portrait</a></li>
+                        <li><a href="#Portraits"> portrait</a></li>
                         <li><a href="#CommercialShoots"> commercial</a></li>
                         <li><a href="#Family"> family</a></li>
                         <li><a href="#Food"> food</a></li>
@@ -66,44 +58,54 @@
     </div>
 
 </header>
+<style>
+    body {
+        margin: 0;
+        font-family: "Courier New", monospace;
+        background: #fff;
+        color: #111;
+    }
+    a {
+        text-decoration: none;
+    }
 
-<section class="about-me" id="about-me">
-    <div class="left">
-        <img src="Images/me_images.JPG" alt="Мое фото" class="about-me__images">
-    </div>
-    <div class="right">
-        <h2 class="about-me__title">
-            Привет!
-        </h2>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 50px auto; /* Это центрирует галерею по горизонтали */
+        padding: 0 20px;
+        justify-content: center; /* Добавь это, если карточки не центрируются */
+        padding-top: 100px;
+    }
 
-        <p class="about-me__description">
-            Меня зовут Таня, я живу в Питере и провожу контент-съёмки для людей и проектов.
-        </p>
-        <p class="about-me__description2">
-            Этапы моей работы:
-        </p>
-        <ul class="about-me__extra">
-            <li class="about-me__extra-elements"><span class="bold">—</span><span> проведение брифинга</span></li>
-            <li class="about-me__extra-elements"><span class="bold">—</span><span> разработка концепции и помощь в выборе локаций и реквизита</span></li>
-            <li class="about-me__extra-elements"><span class="bold">—</span><span> осуществление съемки</span></li>
-            <li class="about-me__extra-elements"><span class="bold">—</span><span> отбор и обработка фотографий</span></li>
-        </ul>
-    </div>
-</section>
+    .gallery-item {
+        text-align: center;
+    }
 
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.03);
+    }
+
+    .caption {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #444;
+    }
+</style>
+<body>
 
 <section class="works" id="work">
-    <div class="photo-grid">
-
-        <img src="Images/works/example1.jpg" data-index="0" alt="Фото 1">
-        <img src="Images/works/example2.jpg" data-index="1" alt="Фото 2">
-        <img src="Images/works/example3.jpg" data-index="2" alt="Фото 3">
-        <img src="Images/works/example4.JPG" data-index="3" alt="Фото 4">
-        <img src="Images/works/example5.JPG" data-index="4" alt="Фото 5">
-        <img src="Images/works/example6.JPG" data-index="5" alt="Фото 6">
-
-    </div>
-
     <div class="modal" id="modal23">
         <button class="close" id="closeBtn">&times;</button>
         <button class="prev" id="prevBtn">&#10094;</button>
@@ -146,7 +148,7 @@
         <div class="portfolio-modal" id="portfolio-modal">
             <ul class="portfolio-list">
                 <li class="portfolio-item"><a href="#services">УСЛУГИ</a></li>
-                <li class="portfolio-item"><a href="portraits.html">——portrait</a></li>
+                <li class="portfolio-item"><a href="#services">——portrait</a></li>
                 <li class="portfolio-item"><a href="#services">——commercial</a></li>
                 <li class="portfolio-item"><a href="#services">——family</a></li>
                 <li class="portfolio-item"><a href="#services">——food</a></li>
@@ -156,6 +158,38 @@
     </section>
 
 </section>
+
+<div class="gallery">
+    <div class="gallery-item">
+        <a href="portrait1.html">
+        <img src="Images\portfolio\portrait\1\logo.JPG" alt="Наталия">
+        <div class="caption">Катя</div>
+        </a>
+    </div>
+    <div class="gallery-item">
+        <img src="Images\portfolio\portrait\2\logo.JPG" alt="Даша Ромашка">
+        <div class="caption">даша ромашка</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images\portfolio\portrait\3\logo.JPG" alt="Таня">
+        <div class="caption">таня</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images\portfolio\portrait\4\logo.JPG" alt="Полина">
+        <div class="caption">полина</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images\portfolio\portrait\5\logo.JPG" alt="Эля">
+        <div class="caption">эля</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images\portfolio\portrait\6\logo.JPG" alt="Яна">
+        <div class="caption">яна</div>
+    </div>
+</div>
+
+</body>
+
 <footer id="contact-me">
     <ul class="socials">
         <li class="link social-element"><a target="_blank" href="https://t.me/tanyaflashes" class="social-element__link">
@@ -170,7 +204,6 @@
     </p>
 </footer>
 <script src="js/script.js"></script>
-<script src="js/indexjs.js"></script>
 
 </body>
 </html>

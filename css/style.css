@@ -10,12 +10,7 @@ a.link:hover{
 }
 
 /*Header*/
-.header{
 
-    height: 110vh;
-    background: url(../Images/Logo.JPG) no-repeat center;
-    background-size: cover;
-}
 
 .header-top{
     color: black;
