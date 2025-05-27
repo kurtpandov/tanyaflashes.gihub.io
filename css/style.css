@@ -771,3 +771,14 @@ body.no-scroll {
         margin-bottom: 5px;
     }
 }
+.header_index{
+
+    height: 110vh;
+    background: url(Images/Logo.JPG) no-repeat center;
+    background-size: cover;
+}
+.header{
+
+    height: 110vh;
+    background-size: cover;
+}
