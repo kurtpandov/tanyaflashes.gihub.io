@@ -1,51 +1,45 @@
-
-/*Common styles*/
-a.link{
-
+/* ===== COMMON STYLES ===== */
+a.link {
     text-decoration: none;
     transition: opacity .25s ease;
 }
-a.link:hover{
-    opacity: .7 ;
+a.link:hover {
+    opacity: .7;
 }
 
-/*Header*/
-
-
-.header-top{
+/* ===== HEADER ===== */
+.header-top {
     color: black;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 80px;
+    height: 80px;                /* Фиксированная высота (можно оставить для шапки) */
     width: 100%;
-    background: rgb(253, 253, 253,96%);
+    background: rgb(253, 253, 253, 96%);
     position: fixed;
     top: 0;
     z-index: 1001;
-
 }
 
+/* Модальное окно портфолио */
 .portfolio-modal {
     display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 1000; /* Поверх других элементов */
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 30%;
-    height: 45%;
-    margin-left: 60%;
-    margin-top: 3%;
-    background-color: rgb(255, 255, 255, 90%); /* Полупрозрачный фон */
-    border-radius: 20px;
-
+    width: 30%;                   /* Было 30% — оставим, это уже процент */
+    height: 45%;                  /* Было 45% — процент */
+    margin-left: 60%;              /* Процент */
+    margin-top: 3%;                /* Процент */
+    background-color: rgb(255, 255, 255, 90%);
+    border-radius: 20px;           /* Скругление в px оставим */
 }
 
-
+/* Кнопка меню */
 .menu-button {
-
     border: 0;
     background: none;
     cursor: pointer;
@@ -56,14 +50,14 @@ a.link:hover{
     display: none;
     flex-basis: content;
     align-items: center;
-    margin-right: -12px;
-    margin-left: 8px;
-    padding-left: 100px;
+    margin-right: -12px;           /* Отрицательный margin в px оставим */
+    margin-left: 8px;              /* Можно заменить на 0.5%? Но оставим px для точности */
+    padding-left: 100px;           /* Большой отступ – заменим на процент? Лучше оставить для десктопа, но в медиа-запросах подкорректируем */
 }
 
 .menu-button .menu-button-icon {
     position: relative;
-    width: 30px;
+    width: 30px;                   /* Фиксированный размер иконки */
     height: 15px;
     margin-top: 14px;
 }
@@ -79,7 +73,7 @@ a.link:hover{
     content: "";
     display: block;
     position: absolute;
-    height: 1px;
+    height: 1px;                   /* Толщина линий в px */
     background: #000000;
 }
 
@@ -96,18 +90,18 @@ a.link:hover{
 }
 
 .menu-button .menu-button-icon span::before {
-    top: -7px;
+    top: -7px;                     /* Смещение в px */
     transition: background 0.3s, transform 0.3s, top 0.3s 0.3s;
 }
 
 .menu-button .menu-button-icon span::after {
-    bottom: -7px;
+    bottom: -7px;                  /* Смещение в px */
     transition: background 0.3s, transform 0.3s, bottom 0.3s 0.3s;
 }
 
 .menu-button .menu-button-label {
-    margin-right: 12px;
-    font-size: 16px;
+    margin-right: 12px;             /* px оставим */
+    font-size: 16px;                /* Размер шрифта в px */
     letter-spacing: 0.8px;
 }
 
@@ -141,26 +135,25 @@ a.link:hover{
     display: none;
 }
 
-
-
+/* Гамбургер (альтернативная кнопка) */
 .hamburger {
     cursor: pointer;
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 40px;
+    width: 40px;                   /* Фиксированный размер */
     height: 30px;
 }
 
 .line {
     background-color: #000000;
-    height: 2px;
+    height: 2px;                   /* Толщина линии */
     border-radius: 1px;
     transition: all 0.3s ease;
 }
 
 .hamburger.active .line1 {
-    transform: translateY(18px) rotate(45deg);
+    transform: translateY(18px) rotate(45deg); /* Смещение в px */
 }
 
 .hamburger.active .line2 {
@@ -171,37 +164,36 @@ a.link:hover{
     transform: translateY(-10px) rotate(-45deg);
 }
 
-
-
-
+/* Выпадающее меню */
 .dropdown {
     font-family: "Courier New", monospace;
-    display: none; /* Скрываем выпадающий список по умолчанию */
-    position: absolute; /* Позиционируем его относительно родителя */
-    background-color: white; /* Цвет фона выпадающего списка */
-    list-style-type: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
-    margin: 0; /* Убираем внешние отступы */
-    z-index: 1000; /* Устанавливаем порядок отображения */
-
+    display: none;
+    position: absolute;
+    background-color: white;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
 }
 
 .menu-element:hover .dropdown {
-    display: block; /* Показываем выпадающий список при наведении на родительский элемент */
+    display: block;
 }
 
 .dropdown li {
-    padding: 7px; /* Отступы для элементов списка */
+    padding: 7px;                  /* px – оставим */
 }
 
 .dropdown li a {
-    text-decoration: none; /* Убираем подчеркивание ссылок */
-    color: black; /* Цвет текста  #bda753 */
+    text-decoration: none;
+    color: black;
 }
 
 .dropdown li a:hover {
     color: #bda753;
 }
+
+/* ===== BASE ===== */
 body {
     margin: 0;
     padding: 0;
@@ -209,16 +201,17 @@ body {
     background-color: #fff;
 }
 
+/* ===== PHOTO GRID ===== */
 .photo-grid {
     column-count: 3;
-    column-gap: 16px;
-    padding: 20px;
+    column-gap: 16px;               /* px – заменим на проценты? Лучше оставить px для сетки */
+    padding: 20px;                   /* px – переведём в проценты? padding: 2%? Но для сетки лучше px, чтобы не сжималось слишком. Оставим. */
 }
 
 .photo-grid img {
-    width: 100%;
-    margin-bottom: 16px;
-    border-radius: 8px;
+    width: 100%;                     /* Уже хорошо */
+    margin-bottom: 16px;             /* px – оставим */
+    border-radius: 8px;              /* px – оставим */
     display: block;
     break-inside: avoid;
 }
@@ -226,16 +219,17 @@ body {
 @media (max-width: 768px) {
     .photo-grid {
         column-count: 2;
+        column-gap: 16px;             /* Можно уменьшить, но оставим */
+        padding: 20px;                 /* Оставим */
     }
 }
 
-
-
-
+/* ===== PORTFOLIO MODAL ===== */
 .portfolio-modal.show {
-    opacity: 1; /* Полная непрозрачность при показе */
-    visibility: visible; /* Делаем элемент видимым */
+    opacity: 1;
+    visibility: visible;
 }
+
 .portfolio-list {
     list-style: none;
     padding: 0;
@@ -244,8 +238,8 @@ body {
 }
 
 .portfolio-item {
-    margin: 10px 0;
-    font-size: 18px;
+    margin: 10px 0;                  /* px – оставим */
+    font-size: 18px;                 /* px – оставим */
 }
 
 .portfolio-item a {
@@ -255,121 +249,115 @@ body {
 }
 
 .portfolio-item a:hover {
-    color: #4e4323;; /* Цвет при наведении */
+    color: #4e4323;
 }
 
 .sub-list {
     list-style: none;
-    padding-left: 20px; /* Отступ для подсписка */
-    display: none; /* Скрываем подсписок по умолчанию */
+    padding-left: 20px;               /* px – оставим */
+    display: none;
 }
 
 .portfolio-item:hover .sub-list {
-    display: block; /* Показываем подсписок при наведении */
+    display: block;
 }
 
 .sub-item {
-    margin: 5px 0;
+    margin: 5px 0;                    /* px – оставим */
 }
 
 .sub-item a {
     color: #555;
 }
 
-.menu-element__link{
+.menu-element__link {
     color: #000000;
     font-family: "Courier New", monospace;
     white-space: nowrap;
 }
-.logo{
-    font-size: 26px;
+
+/* ===== LOGO ===== */
+.logo {
+    font-size: 26px;                  /* px – оставим как базовый */
     font-family: "Courier New", monospace;
     white-space: nowrap;
     overflow: hidden;
-    line-height: 1.5em;
-
-
-    margin-right: 2vh;
-    margin-left: 1vh;
+    line-height: 1.5em;                /* em – относительная единица, хорошо */
+    margin-right: 2vh;                  /* vh – оставим, можно заменить на % от ширины? Но vh относительно высоты, можно оставить */
+    margin-left: 1vh;                   /* аналогично */
     color: #000000;
-
 }
 
-.menu{
+/* ===== MENU ===== */
+.menu {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-.menu-element{
-    margin-right: 1vh;
+
+.menu-element {
+    margin-right: 1vh;                 /* vh – оставим */
 }
+
 .menu-element:last-child {
     margin-right: 0;
-
 }
-.menu-element a.link.active, .menu-element a.link:hover{
+
+.menu-element a.link.active,
+.menu-element a.link:hover {
     color: #bda753;
 }
 
-/*about-me*/
+/* ===== ABOUT ME ===== */
 .about-me {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 20px;                     /* px – оставим для больших экранов, но можно заменить на % */
     border-radius: 8px;
     font-family: "Courier New", monospace;
 }
-
 
 .left {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 200px;
+    min-width: 200px;                  /* px – оставим */
 }
 
-/* Стили для изображения */
 .about-me__images {
     max-width: 100%;
     height: auto;
-
 }
 
-/* Стили для правой части */
 .right {
-    margin-top: 10%;
+    margin-top: 10%;                    /* Уже % */
     flex: 2;
-    padding-left: 20px;
+    padding-left: 20px;                  /* px – оставим? Можно заменить на 2% */
     margin-left: auto;
     display: block;
-
 }
 
-/* Стили для заголовка */
 .about-me__title {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 24px;                     /* px */
+    margin-bottom: 10px;                  /* px */
 }
-
 
 .about-me__description {
     font-size: 16px;
     line-height: 1.2;
     margin-bottom: 10px;
-
 }
+
 .about-me__description2 {
     font-size: 16px;
     line-height: 1.2;
     margin-bottom: 10px;
-
 }
 
 .gray {
     color: #4b7aac;
 }
-
 
 .about-me__extra {
     list-style-type: none;
@@ -377,18 +365,17 @@ body {
 }
 
 .about-me__extra-elements {
-    margin-bottom: 5px;
+    margin-bottom: 5px;                   /* px */
 }
-
 
 .bold {
     font-weight: bold;
 }
 
-/* Медиа-запрос для адаптивности на мобильных устройствах */
+/* Медиа-запрос для адаптивности на мобильных */
 @media (max-width: 768px) {
     .header-top {
-        justify-content:left;
+        justify-content: left;
     }
 
     .about-me {
@@ -397,58 +384,67 @@ body {
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 24px;                   /* px – можно уменьшить */
+        margin-right: 1vh;                  /* оставим */
+        margin-left: 1vh;
     }
+
     .right {
         padding-left: 0;
         text-align: left;
     }
-    .navigation{
-        margin-left: 15%;
+
+    .navigation {
+        margin-left: 15%;                   /* % */
     }
-    .menu-element{
+
+    .menu-element {
         display: none;
     }
-    .menu-elementPortfolio{
+
+    .menu-elementPortfolio {
         display: block;
     }
+
     .portfolio-modal {
         width: 100%;
         height: 100%;
         margin-left: 0;
         margin-top: 0;
         border-radius: 0;
-
     }
-    .menu-button{
+
+    .menu-button {
         display: flex;
+        padding-left: 5%;                   /* Заменяем 100px на % для мобильных */
+        margin-left: 2%;                    /* Добавляем отступ */
     }
-
 }
-.works{
+
+/* ===== WORKS SECTION ===== */
+.works {
     font-family: "Courier New", monospace;
 }
-.work-cases{
+
+.work-cases {
     text-align: center;
 }
+
 .portfolio {
-    padding: 20px;
+    padding: 20px;                          /* px */
     background-color: #f9f9f9;
 }
 
 .portfolio-container {
     display: flex;
-
 }
 
 .portfolio-item {
     background: white;
-
-    border-radius: 5px;
-    margin: 10px;
-    padding: 15px;
+    border-radius: 5px;                     /* px */
+    margin: 10px;                            /* px */
+    padding: 15px;                           /* px */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
 }
 
 .portfolio-item img {
@@ -459,246 +455,244 @@ body {
 .portfolio-item h3 {
     margin-top: 10px;
 }
+
 .portfolio-item a {
     color: #bda753;
     font-family: "Courier New", monospace;
     white-space: nowrap;
-
 }
 
-/* Стили для мобильных устройств */
 @media (max-width: 768px) {
     .portfolio-container {
-        flex-direction: row; /* Горизонтальное направление для мобильных устройств */
-        overflow-x: auto; /* Позволяет прокручивать контейнер по горизонтали */
-        width: 100%; /* Фиксированная ширина для карточек */
-        scroll-snap-type: x mandatory; /* Добавляет эффект "прилипания" при прокрутке */
-        scroll-snap-align: start; /* Элемент "прилипает" к началу контейнера при прокрутке */
+        flex-direction: row;
+        overflow-x: auto;
+        width: 100%;
+        scroll-snap-type: x mandatory;
+        scroll-snap-align: start;
     }
 
     .portfolio-item {
-        min-width: 250px; /* Минимальная ширина для карточек на мобильных устройствах */
+        min-width: 250px;                    /* px */
     }
 }
 
+/* ===== FOOTER ===== */
 footer {
-    background-color: #ffffff; /* Темный фон */
-    color: #333; /* Белый текст */
-    padding: 20px; /* Отступы вокруг содержимого */
-    text-align: center; /* Центрируем текст */
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;                           /* px – можно заменить на 2% */
+    text-align: center;
     width: 100%;
 }
 
 .socials {
-    list-style: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем внутренние отступы */
-    margin: 0 0 10px 0; /* Убираем внешние отступы, оставляем отступ снизу */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;                      /* px */
 }
 
 .social-element {
-    display: inline-block; /* Выравнивание в одну строку */
-    margin: 0 15px; /* Отступы между элементами */
-    height: 30px;
-    width: 30px;
+    display: inline-block;
+    margin: 0 15px;                           /* px */
+    height: 30px;                              /* px */
+    width: 30px;                               /* px */
 }
 
 .social-element__link {
-    color: white; /* Цвет ссылок */
-    text-decoration: none; /* Убираем подчеркивание */
-    font-weight: bold; /* Жирный шрифт */
-    transition: color 0.3s; /* Плавный переход цвета при наведении */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .social-element__link:hover {
-    color: #bda753; /* Цвет при наведении */
+    color: #bda753;
 }
 
 .footer-about {
-    margin-top: 10px; /* Отступ сверху для текста о владельце */
-    font-size: 14px; /* Размер шрифта */
+    margin-top: 10px;                          /* px */
+    font-size: 14px;                           /* px */
 }
 
-/* Стили для мобильных устройств */
 @media (max-width: 768px) {
     .social-element {
-        margin: 0 10px; /* Уменьшаем отступы на мобильных устройствах */
+        margin: 0 10px;                          /* px */
     }
 
     .footer-about {
-        font-size: 12px; /* Уменьшаем размер шрифта для мобильных устройств */
+        font-size: 12px;                          /* px */
     }
 }
 
+/* ===== BODY SCROLL ===== */
 body {
     margin: 0;
     padding: 0;
-    height: 2000px; /* Для демонстрации прокрутки */
+    height: 2000px; /* Для демонстрации прокрутки – фиксированная высота, можно убрать */
 }
 body.no-scroll {
     overflow: hidden;
 }
+
+/* ===== FLOATING BUTTON ===== */
 .floating-button {
     position: fixed;
-    bottom: 20px; /* Отступ от нижней границы */
-    right: 20px; /* Отступ от правой границы */
-    background-color: #bda753; /* Цвет фона */
-    color: white; /* Цвет текста */
-    border: none; /* Без рамки */
-    border-radius: 50%; /* Скругление углов */
-    padding: 10px 15px; /* Внутренние отступы */
-    font-size: 16px; /* Размер шрифта */
-    cursor: pointer; /* Курсор при наведении */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
-    height: 50px;
-    width: 50px;
+    bottom: 20px;                               /* px */
+    right: 20px;                                /* px */
+    background-color: #bda753;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;                          /* px */
+    font-size: 16px;                             /* px */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 50px;                                /* px */
+    width: 50px;                                 /* px */
 }
 
 .floating-button:hover {
-    background-color: #4e4323; /* Цвет фона при наведении */
+    background-color: #4e4323;
 }
+
+/* ===== MODAL ===== */
 .modal {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 1000; /* Поверх других элементов */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
     background-color: white;
     color: #000000;
-    margin: 20% auto; /* Центрирование окна */
-    padding: 20px;
+    margin: 20% auto;                           /* % */
+    padding: 20px;                               /* px */
     border-radius: 5px;
-    width: 80%; /* Ширина окна */
-    max-width: 500px; /* Максимальная ширина окна */
+    width: 80%;                                  /* % */
+    max-width: 500px;                            /* px */
     text-align: center;
 }
 
 .modal-content__img img {
-    width: 100px; /* Установите желаемую ширину изображения */
-    height: 100px; /* Установите желаемую высоту изображения */
-    border-radius: 50%; /* Делаем изображение круглым */
-    object-fit: cover; /* Обрезаем изображение по кругу */
-    margin-left: 40%;
-
+    width: 100px;                                 /* px */
+    height: 100px;                                /* px */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 40%;                             /* % */
 }
-.modal-content h2{
+
+.modal-content h2 {
     line-height: 0.9;
 }
-.modal-content p{
-    padding-bottom: 20px;
+
+.modal-content p {
+    padding-bottom: 20px;                          /* px */
 }
 
 .modal-floating-button {
-    display: flex; /* Используем flexbox для выравнивания */
-    align-items: center; /* Центрируем содержимое по вертикали */
-    background-color: #d1d1d1; /* Цвет фона кнопки */
-    color: #000000; /* Цвет текста */
-    border: none; /* Убираем рамку */
-    border-radius: 5px; /* Скругляем углы кнопки */
-    padding: 10px 50%; /* Отступы внутри кнопки */
-    cursor: pointer; /* Курсор при наведении */
-    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    display: flex;
+    align-items: center;
+    background-color: #d1d1d1;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 50%;                             /* % (но большой отступ) – можно заменить на 10px 20%? */
+    cursor: pointer;
+    text-decoration: none;
     width: 100%;
-
 }
 
 .modal-floating-button span {
-    margin-left: 10px; /* Отступ слева от текста */
+    margin-left: 10px;                              /* px */
 }
-
-
 
 .socials {
-    list-style: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
-    margin: 0; /* Убираем внешние отступы */
-    display: flex; /* Используем flexbox для выравнивания элементов */
-    justify-content: center; /* Центрируем элементы по горизонтали */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* Стили для элемента списка */
 .link {
-    margin: 0 10px; /* Отступы между кнопками */
+    margin: 0 10px;                                 /* px */
 }
 
-/* Стили для кнопки */
 .modal-floating-button {
-    display: flex; /* Используем flexbox для выравнивания содержимого */
-    align-items: center; /* Центрируем содержимое по вертикали */
-    background-color: #a3b8d1; /* Цвет фона кнопки */
-    color: #000000; /* Цвет текста */
-    border: none; /* Убираем рамку */
-    border-radius: 5px; /* Скругляем углы кнопки */
-    padding: 10px 35%; /* Отступы внутри кнопки */
-    cursor: pointer; /* Курсор при наведении */
-    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    display: flex;
+    align-items: center;
+    background-color: #a3b8d1;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 35%;                              /* % */
+    cursor: pointer;
+    text-decoration: none;
     margin-top: 5px;
 }
 
-/* Стили для изображения внутри кнопки */
 .modal-floating-button img {
-    width: 20px; /* Ширина изображения внутри кнопки */
-    height: 20px; /* Высота изображения внутри кнопки */
-    margin-right: 10px; /* Отступ справа от изображения */
+    width: 20px;                                     /* px */
+    height: 20px;                                    /* px */
+    margin-right: 10px;                              /* px */
 }
 
-/* Стили для текста внутри кнопки */
 .modal-floating-button span {
-    margin-left: 10px; /* Отступ слева от текста (если нужно) */
+    margin-left: 10px;
 }
-.modal-social-element__link{
+
+.modal-social-element__link {
     text-decoration: none;
 }
 
 @media (max-width: 768px) {
     .modal-content {
-        margin: 50% auto; /* Уменьшаем отступы на мобильных устройствах */
+        margin: 50% auto;                             /* % */
     }
     .modal-content__img img {
-        margin-left: 33%;
+        margin-left: 33%;                              /* % */
     }
     .modal-floating-button {
-        padding: 10px 25%;
+        padding: 10px 25%;                             /* % */
     }
 }
+
 .close:hover,
 .close:focus {
-    color: black; /* Цвет при наведении */
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-
-
+/* ===== PHOTO GRID (с отступами) ===== */
 .photo-grid {
     column-count: 3;
-    column-gap: 15px;
-    margin-left: 300px;
-    margin-right: 300px;
+    column-gap: 15px;                               /* px */
+    margin-left: 300px;                              /* px – для больших экранов, заменим на %? */
+    margin-right: 300px;                             /* px */
 }
 
 .photo-grid img {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 15px;                             /* px */
     display: block;
     border-radius: 0;
     cursor: pointer;
     transition: transform 0.3s ease;
-
 }
 
 .photo-grid img:hover {
     transform: scale(1.07);
 }
 
-/* Модальное окно */
+/* Модальное окно галереи */
 .modal23 {
     display: none;
     position: fixed;
@@ -722,7 +716,7 @@ body.no-scroll {
 
 .close, .prev, .next {
     position: absolute;
-    font-size: 32px;
+    font-size: 32px;                                 /* px */
     color: white;
     background: none;
     border: none;
@@ -731,8 +725,8 @@ body.no-scroll {
 }
 
 .close {
-    top: 20px;
-    right: 30px;
+    top: 20px;                                       /* px */
+    right: 30px;                                      /* px */
 }
 
 .prev, .next {
@@ -741,19 +735,19 @@ body.no-scroll {
 }
 
 .prev {
-    left: 30px;
+    left: 30px;                                      /* px */
 }
 
 .next {
-    right: 30px;
+    right: 30px;                                     /* px */
 }
 
 @media (max-width: 768px) {
     .photo-grid {
         column-count: 3;
-        margin-left: 0;
+        margin-left: 0;                               /* Убираем большие отступы на мобильных */
         margin-right: 0;
-        column-gap: 5px;
+        column-gap: 5px;                              /* px */
     }
     .photo-grid img {
         margin-bottom: 5px;
@@ -771,14 +765,28 @@ body.no-scroll {
         margin-bottom: 5px;
     }
 }
-.header_index{
 
-    height: 110vh;
+.header_index {
+    height: 110vh;                                    /* vh – оставим */
     background: url(../Images/Logo.JPG) no-repeat center;
     background-size: cover;
 }
-.header{
 
-    height: 3vh;
+.header {
+    height: 3vh;                                      /* vh – оставим */
     background-size: cover;
+}
+/* Сдвигаем кнопку ближе к левому краю на маленьких экранах */
+@media (max-width: 480px) {
+    .menu-button {
+        margin-left: 0 !important;      /* Убираем отступ слева */
+        padding-left: 5px !important;   /* Минимальный отступ от края */
+    }
+}
+
+@media (max-width: 375px) {
+    .menu-button {
+        margin-left: 0 !important;
+        padding-left: 2px !important;   /* Еще ближе для совсем маленьких */
+    }
 }
