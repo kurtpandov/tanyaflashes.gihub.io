@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-const images = document.querySelectorAll('.photo-grid img');
+const images = document.querySelectorAll('.photo-grid img, .photo-grid-1 img');
 const modal23 = document.getElementById('modal23');
 const modalImg = document.getElementById('modalImg');
 const closeBtn = document.getElementById('closeBtn');

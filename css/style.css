@@ -678,8 +678,21 @@ body.no-scroll {
     margin-left: 300px;                              /* px – для больших экранов, заменим на %? */
     margin-right: 300px;                             /* px */
 }
-
+.photo-grid-1 {
+    column-count: 1;
+    column-gap: 15px;                               /* px */
+    margin-left: 300px;                              /* px – для больших экранов, заменим на %? */
+    margin-right: 300px;                             /* px */
+}
 .photo-grid img {
+    width: 100%;
+    margin-bottom: 15px;                             /* px */
+    display: block;
+    border-radius: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.photo-grid-1 img {
     width: 100%;
     margin-bottom: 15px;                             /* px */
     display: block;
@@ -691,7 +704,9 @@ body.no-scroll {
 .photo-grid img:hover {
     transform: scale(1.07);
 }
-
+.photo-grid-1 img:hover {
+    transform: scale(1.07);
+}
 /* Модальное окно галереи */
 .modal23 {
     display: none;
@@ -753,7 +768,17 @@ body.no-scroll {
         margin-bottom: 5px;
     }
 }
-
+@media (max-width: 768px) {
+    .photo-grid-1 {
+        column-count: 3;
+        margin-left: 0;                               /* Убираем большие отступы на мобильных */
+        margin-right: 0;
+        column-gap: 5px;                              /* px */
+    }
+    .photo-grid-1 img {
+        margin-bottom: 5px;
+    }
+}
 @media (max-width: 500px) {
     .photo-grid {
         column-count: 3;
@@ -765,7 +790,17 @@ body.no-scroll {
         margin-bottom: 5px;
     }
 }
-
+@media (max-width: 500px) {
+    .photo-grid-1 {
+        column-count: 3;
+        margin-left: 0;
+        margin-right: 0;
+        column-gap: 5px;
+    }
+    .photo-grid-1 img {
+        margin-bottom: 5px;
+    }
+}
 .header_index {
     height: 110vh;                                    /* vh – оставим */
     background: url(../Images/Logo.JPG) no-repeat center;
